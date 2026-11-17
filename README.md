@@ -115,6 +115,5 @@ Os códigos de largura são `s12` (largura total), `s8`, `s6` (metade) e `s4`. O
 
 ## Observações
 
-- `assets/video/bg-home-NAO-USADO.mp4` é o vídeo de fundo da home. Ele não está ligado ao site; pode ser apagado para deixar o repositório mais leve ou reaproveitado depois.
-- O conteúdo é montado por JavaScript. Os buscadores modernos executam JavaScript, mas, se a indexação for prioridade, avise para gerarmos uma versão com o HTML já pronto.
+
 - Para a prévia ao compartilhar o link em redes sociais, acrescente em `index.html` uma tag `og:image` com o endereço completo de uma imagem (depois de saber o endereço final do site).
