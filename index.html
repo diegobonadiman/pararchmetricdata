@@ -1,30 +1,399 @@
-<!doctype html>
-<html lang="pt-BR">
-<head>
+<!DOCTYPE html>
+<html lang="pt-BR"><head>
 <meta charset="utf-8">
-<meta name="viewport" content="width=device-width, initial-scale=1">
 <title>ParARCHmetric Data</title>
-<meta name="description" content="Consultoria BIM, design computacional e dados: automação em Revit, Dynamo e Python, dashboards em Power BI e coordenação BIM.">
-<meta name="theme-color" content="#05070d">
-<meta property="og:type" content="website">
-<meta property="og:title" content="ParARCHmetric Data">
-<meta property="og:description" content="Modelagem inteligente, soluções baseadas em dados. Automação BIM, dashboards e portfólio de projetos.">
-<link rel="icon" href="assets/img/logo/logo-pararchmetric.png">
-<link rel="preconnect" href="https://fonts.googleapis.com">
-<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Hanken+Grotesk:wght@400;500;600;700&amp;family=Inter:wght@400;500;600&amp;display=swap" rel="stylesheet">
-<link rel="stylesheet" href="css/style.css">
-</head>
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="description" content="ParARCHmetric Data — consultoria BIM, design computacional e dados (Revit, Dynamo, Python, Power BI).">
+<link rel="icon" href="assets/img/logo-parARCHmetric.png">
+<script>window.__resources = {
+ "https://cdn.jsdelivr.net/npm/react@18.3.1/umd/react.production.min.js": "assets/vendor/react.production.min.js",
+ "https://cdn.jsdelivr.net/npm/react-dom@18.3.1/umd/react-dom.production.min.js": "assets/vendor/react-dom.production.min.js"
+};</script>
+<script src="assets/js/dc-runtime.js"></script>
+<meta name="hz:slide-selector" content="[data-canvas-width]"><meta name="hz:canvas-width" content="1440"><meta name="hz:canvas-height" content="8000"></head>
 <body>
-<div id="app"></div>
-<noscript><p style="color:#e8edf5;font:400 16px Inter,sans-serif;padding:32px">Este site precisa de JavaScript. Contato: <a href="mailto:dxbarq@gmail.com" style="text-decoration:underline">dxbarq@gmail.com</a></p></noscript>
-
-<!-- Modelo (template) da página: preenchido por js/app.js com os dados de js/data.js -->
-<template id="site-template">
-<div style="background:#05070d;color:#e8edf5;font-family:Inter,sans-serif;width:100%;overflow-x:hidden">
+<x-dc>
+<helmet>
+<style>/* cyrillic-ext */
+@font-face {
+  font-family: 'Hanken Grotesk';
+  font-style: normal;
+  font-weight: 400;
+  font-display: swap;
+  src: url(https://fonts.gstatic.com/s/hankengrotesk/v12/ieVn2YZDLWuGJpnzaiwFXS9tYtpQ59CjCQ.woff2) format('woff2');
+  unicode-range: U+0460-052F, U+1C80-1C8A, U+20B4, U+2DE0-2DFF, U+A640-A69F, U+FE2E-FE2F;
+}
+/* vietnamese */
+@font-face {
+  font-family: 'Hanken Grotesk';
+  font-style: normal;
+  font-weight: 400;
+  font-display: swap;
+  src: url(https://fonts.gstatic.com/s/hankengrotesk/v12/ieVn2YZDLWuGJpnzaiwFXS9tYtpS59CjCQ.woff2) format('woff2');
+  unicode-range: U+0102-0103, U+0110-0111, U+0128-0129, U+0168-0169, U+01A0-01A1, U+01AF-01B0, U+0300-0301, U+0303-0304, U+0308-0309, U+0323, U+0329, U+1EA0-1EF9, U+20AB;
+}
+/* latin-ext */
+@font-face {
+  font-family: 'Hanken Grotesk';
+  font-style: normal;
+  font-weight: 400;
+  font-display: swap;
+  src: url(https://fonts.gstatic.com/s/hankengrotesk/v12/ieVn2YZDLWuGJpnzaiwFXS9tYtpT59CjCQ.woff2) format('woff2');
+  unicode-range: U+0100-02BA, U+02BD-02C5, U+02C7-02CC, U+02CE-02D7, U+02DD-02FF, U+0304, U+0308, U+0329, U+1D00-1DBF, U+1E00-1E9F, U+1EF2-1EFF, U+2020, U+20A0-20AB, U+20AD-20C4, U+2113, U+2C60-2C7F, U+A720-A7FF;
+}
+/* latin */
+@font-face {
+  font-family: 'Hanken Grotesk';
+  font-style: normal;
+  font-weight: 400;
+  font-display: swap;
+  src: url("assets/fonts/font-1.woff2") format('woff2');
+  unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C6, U+02DA, U+02DC, U+0304, U+0308, U+0329, U+2000-206F, U+20AC, U+2122, U+2191, U+2193, U+2212, U+2215, U+FEFF, U+FFFD;
+}
+/* cyrillic-ext */
+@font-face {
+  font-family: 'Hanken Grotesk';
+  font-style: normal;
+  font-weight: 500;
+  font-display: swap;
+  src: url(https://fonts.gstatic.com/s/hankengrotesk/v12/ieVn2YZDLWuGJpnzaiwFXS9tYtpQ59CjCQ.woff2) format('woff2');
+  unicode-range: U+0460-052F, U+1C80-1C8A, U+20B4, U+2DE0-2DFF, U+A640-A69F, U+FE2E-FE2F;
+}
+/* vietnamese */
+@font-face {
+  font-family: 'Hanken Grotesk';
+  font-style: normal;
+  font-weight: 500;
+  font-display: swap;
+  src: url(https://fonts.gstatic.com/s/hankengrotesk/v12/ieVn2YZDLWuGJpnzaiwFXS9tYtpS59CjCQ.woff2) format('woff2');
+  unicode-range: U+0102-0103, U+0110-0111, U+0128-0129, U+0168-0169, U+01A0-01A1, U+01AF-01B0, U+0300-0301, U+0303-0304, U+0308-0309, U+0323, U+0329, U+1EA0-1EF9, U+20AB;
+}
+/* latin-ext */
+@font-face {
+  font-family: 'Hanken Grotesk';
+  font-style: normal;
+  font-weight: 500;
+  font-display: swap;
+  src: url(https://fonts.gstatic.com/s/hankengrotesk/v12/ieVn2YZDLWuGJpnzaiwFXS9tYtpT59CjCQ.woff2) format('woff2');
+  unicode-range: U+0100-02BA, U+02BD-02C5, U+02C7-02CC, U+02CE-02D7, U+02DD-02FF, U+0304, U+0308, U+0329, U+1D00-1DBF, U+1E00-1E9F, U+1EF2-1EFF, U+2020, U+20A0-20AB, U+20AD-20C4, U+2113, U+2C60-2C7F, U+A720-A7FF;
+}
+/* latin */
+@font-face {
+  font-family: 'Hanken Grotesk';
+  font-style: normal;
+  font-weight: 500;
+  font-display: swap;
+  src: url("assets/fonts/font-1.woff2") format('woff2');
+  unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C6, U+02DA, U+02DC, U+0304, U+0308, U+0329, U+2000-206F, U+20AC, U+2122, U+2191, U+2193, U+2212, U+2215, U+FEFF, U+FFFD;
+}
+/* cyrillic-ext */
+@font-face {
+  font-family: 'Hanken Grotesk';
+  font-style: normal;
+  font-weight: 600;
+  font-display: swap;
+  src: url(https://fonts.gstatic.com/s/hankengrotesk/v12/ieVn2YZDLWuGJpnzaiwFXS9tYtpQ59CjCQ.woff2) format('woff2');
+  unicode-range: U+0460-052F, U+1C80-1C8A, U+20B4, U+2DE0-2DFF, U+A640-A69F, U+FE2E-FE2F;
+}
+/* vietnamese */
+@font-face {
+  font-family: 'Hanken Grotesk';
+  font-style: normal;
+  font-weight: 600;
+  font-display: swap;
+  src: url(https://fonts.gstatic.com/s/hankengrotesk/v12/ieVn2YZDLWuGJpnzaiwFXS9tYtpS59CjCQ.woff2) format('woff2');
+  unicode-range: U+0102-0103, U+0110-0111, U+0128-0129, U+0168-0169, U+01A0-01A1, U+01AF-01B0, U+0300-0301, U+0303-0304, U+0308-0309, U+0323, U+0329, U+1EA0-1EF9, U+20AB;
+}
+/* latin-ext */
+@font-face {
+  font-family: 'Hanken Grotesk';
+  font-style: normal;
+  font-weight: 600;
+  font-display: swap;
+  src: url(https://fonts.gstatic.com/s/hankengrotesk/v12/ieVn2YZDLWuGJpnzaiwFXS9tYtpT59CjCQ.woff2) format('woff2');
+  unicode-range: U+0100-02BA, U+02BD-02C5, U+02C7-02CC, U+02CE-02D7, U+02DD-02FF, U+0304, U+0308, U+0329, U+1D00-1DBF, U+1E00-1E9F, U+1EF2-1EFF, U+2020, U+20A0-20AB, U+20AD-20C4, U+2113, U+2C60-2C7F, U+A720-A7FF;
+}
+/* latin */
+@font-face {
+  font-family: 'Hanken Grotesk';
+  font-style: normal;
+  font-weight: 600;
+  font-display: swap;
+  src: url("assets/fonts/font-1.woff2") format('woff2');
+  unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C6, U+02DA, U+02DC, U+0304, U+0308, U+0329, U+2000-206F, U+20AC, U+2122, U+2191, U+2193, U+2212, U+2215, U+FEFF, U+FFFD;
+}
+/* cyrillic-ext */
+@font-face {
+  font-family: 'Hanken Grotesk';
+  font-style: normal;
+  font-weight: 700;
+  font-display: swap;
+  src: url(https://fonts.gstatic.com/s/hankengrotesk/v12/ieVn2YZDLWuGJpnzaiwFXS9tYtpQ59CjCQ.woff2) format('woff2');
+  unicode-range: U+0460-052F, U+1C80-1C8A, U+20B4, U+2DE0-2DFF, U+A640-A69F, U+FE2E-FE2F;
+}
+/* vietnamese */
+@font-face {
+  font-family: 'Hanken Grotesk';
+  font-style: normal;
+  font-weight: 700;
+  font-display: swap;
+  src: url(https://fonts.gstatic.com/s/hankengrotesk/v12/ieVn2YZDLWuGJpnzaiwFXS9tYtpS59CjCQ.woff2) format('woff2');
+  unicode-range: U+0102-0103, U+0110-0111, U+0128-0129, U+0168-0169, U+01A0-01A1, U+01AF-01B0, U+0300-0301, U+0303-0304, U+0308-0309, U+0323, U+0329, U+1EA0-1EF9, U+20AB;
+}
+/* latin-ext */
+@font-face {
+  font-family: 'Hanken Grotesk';
+  font-style: normal;
+  font-weight: 700;
+  font-display: swap;
+  src: url(https://fonts.gstatic.com/s/hankengrotesk/v12/ieVn2YZDLWuGJpnzaiwFXS9tYtpT59CjCQ.woff2) format('woff2');
+  unicode-range: U+0100-02BA, U+02BD-02C5, U+02C7-02CC, U+02CE-02D7, U+02DD-02FF, U+0304, U+0308, U+0329, U+1D00-1DBF, U+1E00-1E9F, U+1EF2-1EFF, U+2020, U+20A0-20AB, U+20AD-20C4, U+2113, U+2C60-2C7F, U+A720-A7FF;
+}
+/* latin */
+@font-face {
+  font-family: 'Hanken Grotesk';
+  font-style: normal;
+  font-weight: 700;
+  font-display: swap;
+  src: url("assets/fonts/font-1.woff2") format('woff2');
+  unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C6, U+02DA, U+02DC, U+0304, U+0308, U+0329, U+2000-206F, U+20AC, U+2122, U+2191, U+2193, U+2212, U+2215, U+FEFF, U+FFFD;
+}
+/* cyrillic-ext */
+@font-face {
+  font-family: 'Inter';
+  font-style: normal;
+  font-weight: 400;
+  font-display: swap;
+  src: url(https://fonts.gstatic.com/s/inter/v20/UcC73FwrK3iLTeHuS_nVMrMxCp50SjIa2JL7SUc.woff2) format('woff2');
+  unicode-range: U+0460-052F, U+1C80-1C8A, U+20B4, U+2DE0-2DFF, U+A640-A69F, U+FE2E-FE2F;
+}
+/* cyrillic */
+@font-face {
+  font-family: 'Inter';
+  font-style: normal;
+  font-weight: 400;
+  font-display: swap;
+  src: url(https://fonts.gstatic.com/s/inter/v20/UcC73FwrK3iLTeHuS_nVMrMxCp50SjIa0ZL7SUc.woff2) format('woff2');
+  unicode-range: U+0301, U+0400-045F, U+0490-0491, U+04B0-04B1, U+2116;
+}
+/* greek-ext */
+@font-face {
+  font-family: 'Inter';
+  font-style: normal;
+  font-weight: 400;
+  font-display: swap;
+  src: url(https://fonts.gstatic.com/s/inter/v20/UcC73FwrK3iLTeHuS_nVMrMxCp50SjIa2ZL7SUc.woff2) format('woff2');
+  unicode-range: U+1F00-1FFF;
+}
+/* greek */
+@font-face {
+  font-family: 'Inter';
+  font-style: normal;
+  font-weight: 400;
+  font-display: swap;
+  src: url(https://fonts.gstatic.com/s/inter/v20/UcC73FwrK3iLTeHuS_nVMrMxCp50SjIa1pL7SUc.woff2) format('woff2');
+  unicode-range: U+0370-0377, U+037A-037F, U+0384-038A, U+038C, U+038E-03A1, U+03A3-03FF;
+}
+/* vietnamese */
+@font-face {
+  font-family: 'Inter';
+  font-style: normal;
+  font-weight: 400;
+  font-display: swap;
+  src: url(https://fonts.gstatic.com/s/inter/v20/UcC73FwrK3iLTeHuS_nVMrMxCp50SjIa2pL7SUc.woff2) format('woff2');
+  unicode-range: U+0102-0103, U+0110-0111, U+0128-0129, U+0168-0169, U+01A0-01A1, U+01AF-01B0, U+0300-0301, U+0303-0304, U+0308-0309, U+0323, U+0329, U+1EA0-1EF9, U+20AB;
+}
+/* latin-ext */
+@font-face {
+  font-family: 'Inter';
+  font-style: normal;
+  font-weight: 400;
+  font-display: swap;
+  src: url(https://fonts.gstatic.com/s/inter/v20/UcC73FwrK3iLTeHuS_nVMrMxCp50SjIa25L7SUc.woff2) format('woff2');
+  unicode-range: U+0100-02BA, U+02BD-02C5, U+02C7-02CC, U+02CE-02D7, U+02DD-02FF, U+0304, U+0308, U+0329, U+1D00-1DBF, U+1E00-1E9F, U+1EF2-1EFF, U+2020, U+20A0-20AB, U+20AD-20C4, U+2113, U+2C60-2C7F, U+A720-A7FF;
+}
+/* latin */
+@font-face {
+  font-family: 'Inter';
+  font-style: normal;
+  font-weight: 400;
+  font-display: swap;
+  src: url("assets/fonts/font-2.woff2") format('woff2');
+  unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C6, U+02DA, U+02DC, U+0304, U+0308, U+0329, U+2000-206F, U+20AC, U+2122, U+2191, U+2193, U+2212, U+2215, U+FEFF, U+FFFD;
+}
+/* cyrillic-ext */
+@font-face {
+  font-family: 'Inter';
+  font-style: normal;
+  font-weight: 500;
+  font-display: swap;
+  src: url(https://fonts.gstatic.com/s/inter/v20/UcC73FwrK3iLTeHuS_nVMrMxCp50SjIa2JL7SUc.woff2) format('woff2');
+  unicode-range: U+0460-052F, U+1C80-1C8A, U+20B4, U+2DE0-2DFF, U+A640-A69F, U+FE2E-FE2F;
+}
+/* cyrillic */
+@font-face {
+  font-family: 'Inter';
+  font-style: normal;
+  font-weight: 500;
+  font-display: swap;
+  src: url(https://fonts.gstatic.com/s/inter/v20/UcC73FwrK3iLTeHuS_nVMrMxCp50SjIa0ZL7SUc.woff2) format('woff2');
+  unicode-range: U+0301, U+0400-045F, U+0490-0491, U+04B0-04B1, U+2116;
+}
+/* greek-ext */
+@font-face {
+  font-family: 'Inter';
+  font-style: normal;
+  font-weight: 500;
+  font-display: swap;
+  src: url(https://fonts.gstatic.com/s/inter/v20/UcC73FwrK3iLTeHuS_nVMrMxCp50SjIa2ZL7SUc.woff2) format('woff2');
+  unicode-range: U+1F00-1FFF;
+}
+/* greek */
+@font-face {
+  font-family: 'Inter';
+  font-style: normal;
+  font-weight: 500;
+  font-display: swap;
+  src: url(https://fonts.gstatic.com/s/inter/v20/UcC73FwrK3iLTeHuS_nVMrMxCp50SjIa1pL7SUc.woff2) format('woff2');
+  unicode-range: U+0370-0377, U+037A-037F, U+0384-038A, U+038C, U+038E-03A1, U+03A3-03FF;
+}
+/* vietnamese */
+@font-face {
+  font-family: 'Inter';
+  font-style: normal;
+  font-weight: 500;
+  font-display: swap;
+  src: url(https://fonts.gstatic.com/s/inter/v20/UcC73FwrK3iLTeHuS_nVMrMxCp50SjIa2pL7SUc.woff2) format('woff2');
+  unicode-range: U+0102-0103, U+0110-0111, U+0128-0129, U+0168-0169, U+01A0-01A1, U+01AF-01B0, U+0300-0301, U+0303-0304, U+0308-0309, U+0323, U+0329, U+1EA0-1EF9, U+20AB;
+}
+/* latin-ext */
+@font-face {
+  font-family: 'Inter';
+  font-style: normal;
+  font-weight: 500;
+  font-display: swap;
+  src: url(https://fonts.gstatic.com/s/inter/v20/UcC73FwrK3iLTeHuS_nVMrMxCp50SjIa25L7SUc.woff2) format('woff2');
+  unicode-range: U+0100-02BA, U+02BD-02C5, U+02C7-02CC, U+02CE-02D7, U+02DD-02FF, U+0304, U+0308, U+0329, U+1D00-1DBF, U+1E00-1E9F, U+1EF2-1EFF, U+2020, U+20A0-20AB, U+20AD-20C4, U+2113, U+2C60-2C7F, U+A720-A7FF;
+}
+/* latin */
+@font-face {
+  font-family: 'Inter';
+  font-style: normal;
+  font-weight: 500;
+  font-display: swap;
+  src: url("assets/fonts/font-2.woff2") format('woff2');
+  unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C6, U+02DA, U+02DC, U+0304, U+0308, U+0329, U+2000-206F, U+20AC, U+2122, U+2191, U+2193, U+2212, U+2215, U+FEFF, U+FFFD;
+}
+/* cyrillic-ext */
+@font-face {
+  font-family: 'Inter';
+  font-style: normal;
+  font-weight: 600;
+  font-display: swap;
+  src: url(https://fonts.gstatic.com/s/inter/v20/UcC73FwrK3iLTeHuS_nVMrMxCp50SjIa2JL7SUc.woff2) format('woff2');
+  unicode-range: U+0460-052F, U+1C80-1C8A, U+20B4, U+2DE0-2DFF, U+A640-A69F, U+FE2E-FE2F;
+}
+/* cyrillic */
+@font-face {
+  font-family: 'Inter';
+  font-style: normal;
+  font-weight: 600;
+  font-display: swap;
+  src: url(https://fonts.gstatic.com/s/inter/v20/UcC73FwrK3iLTeHuS_nVMrMxCp50SjIa0ZL7SUc.woff2) format('woff2');
+  unicode-range: U+0301, U+0400-045F, U+0490-0491, U+04B0-04B1, U+2116;
+}
+/* greek-ext */
+@font-face {
+  font-family: 'Inter';
+  font-style: normal;
+  font-weight: 600;
+  font-display: swap;
+  src: url(https://fonts.gstatic.com/s/inter/v20/UcC73FwrK3iLTeHuS_nVMrMxCp50SjIa2ZL7SUc.woff2) format('woff2');
+  unicode-range: U+1F00-1FFF;
+}
+/* greek */
+@font-face {
+  font-family: 'Inter';
+  font-style: normal;
+  font-weight: 600;
+  font-display: swap;
+  src: url(https://fonts.gstatic.com/s/inter/v20/UcC73FwrK3iLTeHuS_nVMrMxCp50SjIa1pL7SUc.woff2) format('woff2');
+  unicode-range: U+0370-0377, U+037A-037F, U+0384-038A, U+038C, U+038E-03A1, U+03A3-03FF;
+}
+/* vietnamese */
+@font-face {
+  font-family: 'Inter';
+  font-style: normal;
+  font-weight: 600;
+  font-display: swap;
+  src: url(https://fonts.gstatic.com/s/inter/v20/UcC73FwrK3iLTeHuS_nVMrMxCp50SjIa2pL7SUc.woff2) format('woff2');
+  unicode-range: U+0102-0103, U+0110-0111, U+0128-0129, U+0168-0169, U+01A0-01A1, U+01AF-01B0, U+0300-0301, U+0303-0304, U+0308-0309, U+0323, U+0329, U+1EA0-1EF9, U+20AB;
+}
+/* latin-ext */
+@font-face {
+  font-family: 'Inter';
+  font-style: normal;
+  font-weight: 600;
+  font-display: swap;
+  src: url(https://fonts.gstatic.com/s/inter/v20/UcC73FwrK3iLTeHuS_nVMrMxCp50SjIa25L7SUc.woff2) format('woff2');
+  unicode-range: U+0100-02BA, U+02BD-02C5, U+02C7-02CC, U+02CE-02D7, U+02DD-02FF, U+0304, U+0308, U+0329, U+1D00-1DBF, U+1E00-1E9F, U+1EF2-1EFF, U+2020, U+20A0-20AB, U+20AD-20C4, U+2113, U+2C60-2C7F, U+A720-A7FF;
+}
+/* latin */
+@font-face {
+  font-family: 'Inter';
+  font-style: normal;
+  font-weight: 600;
+  font-display: swap;
+  src: url("assets/fonts/font-2.woff2") format('woff2');
+  unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C6, U+02DA, U+02DC, U+0304, U+0308, U+0329, U+2000-206F, U+20AC, U+2122, U+2191, U+2193, U+2212, U+2215, U+FEFF, U+FFFD;
+}
+</style>
+<style>
+body{margin:0;background:#05070d}
+a{color:inherit;text-decoration:none}
+a.btn{display:flex;align-items:center;justify-content:space-between;gap:16px;min-height:56px;padding:0 20px;border:1px solid rgba(255,255,255,.55);color:#f2f5fa;font:500 16px Inter,sans-serif}
+a.btn:hover{background:rgba(255,255,255,.1)}
+a.nav{color:#c3cddc;font:500 15px Inter,sans-serif;padding:12px 4px}
+a.nav:hover{color:#fff}
+a.card:hover{border-color:#3d8fdc}
+.pj-grid{display:grid;grid-template-columns:repeat(12,minmax(0,1fr));gap:16px}
+.s12{grid-column:span 12}.s8{grid-column:span 8}.s6{grid-column:span 6}.s4{grid-column:span 4}
+@media(max-width:820px){.s8,.s6,.s4{grid-column:span 12}}
+.pl{background:#eef1f6;padding:14px;box-sizing:border-box}
+.pj-grid img{width:100%;height:auto;display:block}
+.pf-gal{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:56px 32px;align-items:start}
+@media(max-width:820px){.pf-gal{grid-template-columns:1fr}}
+.pf-card{border-top:1px solid #33405a;padding-top:28px;scroll-margin-top:16px;min-width:0}
+.pf-card.is-open{grid-column:1/-1}
+.pf-hd{display:flex;align-items:baseline;gap:14px;margin-bottom:6px}
+.pf-no{font:600 15px ui-monospace,Menlo,monospace;color:#0bb1ee}
+.pf-type{font:500 13px ui-monospace,Menlo,monospace;letter-spacing:.08em;text-transform:uppercase;color:#0bb1ee}
+.pf-name{margin:0 0 6px;font:500 clamp(24px,2.6vw,34px)/1.1 'Hanken Grotesk',sans-serif;letter-spacing:-.01em}
+.pf-meta{margin:0 0 18px;font:500 13px Inter,sans-serif;color:#9aa7bb}
+.pf-hero{margin:0 0 20px}
+.pf-hero .pl{padding:0}
+.pf-hero.is-closed img{width:100%;aspect-ratio:16/10;object-fit:cover;display:block;background:#0b101a;transition:transform .4s}
+.pf-hero.is-closed .frame{overflow:hidden;border-radius:6px}
+.pf-hero.is-closed:hover img{transform:scale(1.03)}
+.pf-hero.is-open img{width:100%;height:auto;display:block;border-radius:6px}
+.pf-desc{margin:0 0 20px;font:400 16px/1.7 Inter,sans-serif;color:#c3cddc;max-width:760px}
+a.more{display:inline-flex;align-items:center;gap:10px;min-height:44px;padding:0 4px;border-bottom:1px solid #3d8fdc;color:#7fb8f0;font:600 15px Inter,sans-serif}
+a.more:hover{color:#fff;border-color:#fff}
+.pf-more-body{margin-top:32px}
+.cap{font:500 12px ui-monospace,Menlo,monospace;letter-spacing:.06em;text-transform:uppercase;color:#9aa7bb;margin-top:8px}
+.num{font:700 clamp(72px,12vw,160px)/.9 'Hanken Grotesk',sans-serif;color:transparent;-webkit-text-stroke:1.5px #3d8fdc}
+.ix{display:grid;grid-template-columns:56px 1fr auto;gap:16px;padding:14px 0;border-top:1px solid #1b2333;font:500 17px Inter,sans-serif;color:#e8edf5}
+.ix:hover{color:#0bb1ee}
+.row{display:grid;grid-template-columns:96px 1fr;gap:12px;padding:10px 0;border-top:1px solid #1b2333;font:400 14px/1.5 Inter,sans-serif}
+.row b{font:500 12px ui-monospace,Menlo,monospace;letter-spacing:.06em;text-transform:uppercase;color:#9aa7bb}
+.chip{padding:6px 12px;border:1px solid #33405a;color:#7d8aa0;font:500 12px ui-monospace,Menlo,monospace;letter-spacing:.04em}
+.chip.on{border-color:#0bb1ee;color:#e8edf5;background:rgba(11,177,238,.12)}
+</style>
+</helmet>
+<div style="background:#05070d;color:#e8edf5;font-family:Inter,sans-serif;width:100%;overflow-x:hidden" data-canvas-width="1440" data-canvas-height="8000" data-document-role="page" data-label="Website — Home">
 
 <header style="display:flex;flex-wrap:wrap;align-items:center;justify-content:space-between;gap:12px 32px;max-width:1240px;margin:0 auto;padding:20px 32px">
-<a href="#inicio" aria-label="ParARCHmetric Data"><img src="assets/img/logo/logo-pararchmetric.png" alt="ParARCHmetric Data" style="height:84px;width:auto;display:block"></a>
+<a href="#inicio" aria-label="ParARCHmetric Data"><img src="assets/img/logo-parARCHmetric.png" alt="ParARCHmetric Data" style="height:84px;width:auto;display:block"></a>
 <div style="display:flex;flex-wrap:wrap;align-items:center;gap:8px 28px">
 <nav aria-label="Menu" style="display:flex;flex-wrap:wrap;gap:8px 28px">
 <a class="nav" href="#solucoes">{{t.nav1}}</a>
@@ -33,8 +402,8 @@
 <a class="nav" href="#contato">{{t.nav4}}</a>
 </nav>
 <div role="group" aria-label="Idioma / Language" style="display:flex;border:1px solid #33405a;border-radius:8px;overflow:hidden">
-<button type="button" onClick="{{setPt}}" aria-pressed="{{isPt}}" style="{{ptStyle}}">PT</button>
-<button type="button" onClick="{{setEn}}" aria-pressed="{{isEn}}" style="{{enStyle}}">EN</button>
+<button type="button" sc-camel-on-click="{{setPt}}" aria-pressed="{{isPt}}" style="{{ptStyle}}">PT</button>
+<button type="button" sc-camel-on-click="{{setEn}}" aria-pressed="{{isEn}}" style="{{enStyle}}">EN</button>
 </div>
 </div>
 </header>
@@ -70,10 +439,10 @@
 <p style="margin:0 0 24px;font:400 16px/1.6 Inter,sans-serif;color:#aab6c9">{{t.featP}}</p>
 <div style="display:flex;gap:40px;flex-wrap:wrap"><div><div style="font:500 13px Inter,sans-serif;color:#9aa7bb">{{t.featGain}}</div><div style="font:600 22px 'Hanken Grotesk',sans-serif;color:#4ade80">{{t.featGainV}}</div></div><div><div style="font:500 13px Inter,sans-serif;color:#9aa7bb">{{t.featAud}}</div><div style="font:600 18px 'Hanken Grotesk',sans-serif">{{t.featAudV}}</div></div></div>
 </div>
-<div style="align-self:center;border:1px solid #1b2333;border-radius:10px;overflow:hidden;background:#000"><video autoplay="" muted="" loop="" playsinline="" controls="" preload="metadata" src="assets/video/demo-dynamo-criar-vistas-pranchas.mp4" aria-label="{{t.demoLabel}}" style="display:block;width:100%;height:auto"></video></div>
+<div style="align-self:center;border:1px solid #1b2333;border-radius:10px;overflow:hidden;background:#000"><video autoplay="" muted="" loop="" playsinline="" controls="" preload="metadata" src="assets/video/demo-dynamo-pranchas.mp4" aria-label="{{t.demoLabel}}" style="display:block;width:100%;height:auto"></video></div>
 </div>
 <div style="margin-top:20px;display:grid;grid-template-columns:repeat(auto-fit,minmax(300px,1fr));gap:20px;background:#0b101a;border:1px solid #1b2333;border-radius:12px;padding:32px">
-<div style="align-self:center;border:1px solid #1b2333;border-radius:10px;overflow:hidden;background:#000"><video autoplay="" muted="" loop="" playsinline="" controls="" preload="metadata" src="assets/video/demo-dashboard-qualidade-modelo.mp4" aria-label="{{t.dashLabel}}" style="display:block;width:100%;height:auto"></video></div>
+<div style="align-self:center;border:1px solid #1b2333;border-radius:10px;overflow:hidden;background:#000"><video autoplay="" muted="" loop="" playsinline="" controls="" preload="metadata" src="assets/video/dashboard-qualidade-powerbi.mp4" aria-label="{{t.dashLabel}}" style="display:block;width:100%;height:auto"></video></div>
 <div>
 <div style="display:flex;gap:8px;flex-wrap:wrap;margin-bottom:16px"><span style="padding:6px 12px;border-radius:6px;background:#12315a;color:#9cc9f5;font:500 13px Inter,sans-serif">Power BI</span><span style="padding:6px 12px;border-radius:6px;background:#1b2333;color:#c3cddc;font:500 13px Inter,sans-serif">QA/QC</span></div>
 <h3 style="margin:0 0 12px;font:600 24px 'Hanken Grotesk',sans-serif">{{t.dashH}}</h3>
@@ -108,16 +477,19 @@
 <a class="ix" href="#{{p.id}}"><span style="color:#0bb1ee;font-family:ui-monospace,Menlo,monospace">{{p.no}}</span><span>{{p.name}}</span><span style="color:#9aa7bb;font-size:14px">{{p.year}}</span></a>
 </sc-for>
 </nav>
+<div class="pf-gal">
 <sc-for list="{{projects}}" as="p" hint-placeholder-count="7">
-<article id="{{p.id}}" style="border-top:1px solid #33405a;padding:56px 0 72px;scroll-margin-top:16px">
-<div style="display:flex;align-items:flex-end;gap:24px;flex-wrap:wrap;margin-bottom:28px">
-<div class="num">{{p.no}}</div>
-<div><div style="font:500 13px ui-monospace,Menlo,monospace;letter-spacing:.08em;text-transform:uppercase;color:#0bb1ee;margin-bottom:8px">{{p.type}}</div>
-<h3 style="margin:0;font:500 clamp(28px,4vw,48px)/1.05 'Hanken Grotesk',sans-serif;letter-spacing:-.01em">{{p.name}}</h3></div>
-</div>
+<article id="{{p.id}}" class="pf-card {{p.cardCls}}">
+<div class="pf-hd"><span class="pf-no">{{p.no}}</span><span class="pf-type">{{p.type}}</span></div>
+<h3 class="pf-name">{{p.name}}</h3>
+<p class="pf-meta">{{p.meta}}</p>
+<figure class="pf-hero {{p.heroCls}}"><div class="frame"><a href="#{{p.id}}" sc-camel-on-click="{{p.toggle}}" aria-label="{{p.more}}: {{p.name}}" style="display:block"><img src="{{p.hero.src}}" alt="{{p.hero.cap}}" loading="lazy"></a></div><figcaption class="cap">{{p.hero.cap}}</figcaption></figure>
+<p class="pf-desc">{{p.desc}}</p>
+<a class="more" href="#{{p.id}}" sc-camel-on-click="{{p.toggle}}" aria-expanded="{{p.open}}"><span>{{p.more}}</span><span aria-hidden="true">{{p.arrow}}</span></a>
+<sc-if value="{{p.open}}" hint-placeholder-val="{{false}}">
+<div class="pf-more-body">
 <div class="pj-grid">
-<figure class="{{p.hero.cls}}" style="margin:0"><div class="{{p.hero.pl}}"><img src="{{p.hero.src}}" alt="{{p.hero.cap}}" loading="lazy"></div><figcaption class="cap">{{p.hero.cap}}</figcaption></figure>
-<div class="s4">
+<div class="s12" style="max-width:520px">
 <sc-for list="{{p.spec}}" as="r" hint-placeholder-count="5"><div class="row"><b>{{r.k}}</b><span>{{r.v}}</span></div></sc-for>
 <sc-if value="{{p.hasInv}}" hint-placeholder-val="{{true}}">
 <div class="row" style="display:block"><b>{{t.inv}}</b><div style="display:flex;flex-wrap:wrap;gap:8px;margin-top:10px">
@@ -125,7 +497,6 @@
 </div></div>
 </sc-if>
 </div>
-<div class="{{p.descCls}}"><p style="margin:8px 0 8px;font:400 17px/1.7 Inter,sans-serif;color:#c3cddc;max-width:760px">{{p.desc}}</p></div>
 <sc-for list="{{p.figs}}" as="f" hint-placeholder-count="3">
 <figure class="{{f.cls}}" style="margin:0"><div class="{{f.pl}}"><a href="{{f.src}}" target="_blank" rel="noopener" style="display:block;cursor:zoom-in"><img src="{{f.src}}" alt="{{f.cap}}" loading="lazy"></a></div><figcaption class="cap">{{f.cap}}</figcaption></figure>
 </sc-for>
@@ -140,8 +511,12 @@
 </div>
 </sc-for>
 </div>
+<div style="margin-top:32px"><a class="more" href="#{{p.id}}" sc-camel-on-click="{{p.toggle}}"><span>{{p.less}}</span><span aria-hidden="true">↑</span></a></div>
+</div>
+</sc-if>
 </article>
 </sc-for>
+</div>
 </section>
 
 <section id="sobre" style="max-width:1240px;margin:0 auto;padding:96px 32px 40px;box-sizing:border-box">
@@ -171,12 +546,177 @@
 </div>
 </section>
 
-<footer style="border-top:1px solid #151b28;padding:32px;text-align:center;font:400 14px Inter,sans-serif;color:#9aa7bb">© 2026 ParARCHmetric Data · Diego Bonadiman · <a href="mailto:dxbarq@gmail.com" style="text-decoration:underline">dxbarq@gmail.com</a></footer>
+<footer style="border-top:1px solid #151b28;padding:32px;text-align:center;font:400 14px Inter,sans-serif;color:#9aa7bb">© 2026 ParARCHmetric Data · Diego Bonadiman · <a href="mailto:diegobonadiman@live.com" style="text-decoration:underline">diegobonadiman@live.com</a></footer>
 
 </div>
-</template>
+</x-dc>
+<script type="text/x-dc" data-dc-script="" data-props="{&quot;$preview&quot;:{&quot;width&quot;:1440,&quot;height&quot;:9800}}">
+const TXT = {
+pt: {
+nav1:"Soluções BIM",nav2:"Portfólio",nav3:"Sobre",nav4:"Contato",
+eyebrow:"Consultoria BIM · Design computacional · Dados",
+h1:"Modelagem inteligente, soluções baseadas em dados",
+heroSub:"Automação em Revit, Dynamo e Python, dashboards em Power BI e coordenação BIM para escritórios de arquitetura, engenharia e construtoras.",
+cta1:"Explore as soluções BIM",cta2:"Ver Portfólio de Projetos",cta3:"Sobre a ParARCHmetric Data",
+solEyebrow:"Módulo 1 · BIM & Soluções Dev",solTitle:"Scripts e Automação BIM",
+solSub:"Scripts, plugins e automações para otimizar fluxos de trabalho no ecossistema Revit/Dynamo, com foco em produtividade, ROI e padronização.",
+sol:[{h:"Scripts de Produtividade",p:"Automação de rotinas repetitivas: renomeação em lote, preenchimento de parâmetros COBie, criação automática de pranchas e vistas."},{h:"Validação de Modelos (QA/QC)",p:"Ferramentas personalizadas para checagem de interferências (clash detection), conformidade com o BEP e auditoria de elementos."},{h:"Design Generativo & Paramétrico",p:"Algoritmos em Dynamo/Grasshopper para otimização de fachadas, layout de vagas, estudos de insolação e racionalização construtiva."}],
+impEyebrow:"Serviço · Implementação BIM",impTitle:"Implementação BIM para escritórios, gerenciadoras e construtoras",
+impSub:"Diagnóstico de maturidade, BEP sob medida e padronização de processos, com automação e treinamento da equipe, alinhados à ISO 19650.",
+impAud:[{h:"Escritórios de arquitetura",p:"Padrões BIM e procedimentos operacionais, bibliotecas e templates, e rotinas automatizadas para ganhar interoperabilidade e eficiência da equipe."},{h:"Gerenciadoras",p:"Coordenação multidisciplinar e compatibilização, auditorias QA/QC e dashboards de KPIs em Power BI para acompanhar o desempenho dos projetos."},{h:"Construtoras",p:"Modelos preparados para extração de quantitativos e fidelidade entre modelo e obra, com dados integrados a dashboards de controle."}],
+impStepsTitle:"Como funciona",
+impSteps:[{h:"Diagnóstico",p:"Avaliação da maturidade BIM e dos fluxos de trabalho atuais."},{h:"BEP e padrões",p:"Elaboração do BEP e dos procedimentos operacionais padrão."},{h:"Parametrização e automação",p:"Bibliotecas, scripts em Dynamo e Python e verificações de QA/QC."},{h:"Treinamento",p:"Capacitação da equipe para padronizar e manter os processos."}],
+impCta:"Solicitar implementação BIM",
+featH:"Gerador Automático de Pranchas e Vistas",featP:"Script em Python que lê a lista de ambientes do projeto e gera automaticamente vistas 3D, ampliações e folhas configuradas com carimbo padrão.",
+featGain:"Ganho de tempo",featGainV:"30% menos tempo manual",featAud:"Público",featAudV:"BIM Managers & Modeladores",
+demoLabel:"Gravação de tela: script Dynamo criando vistas e folhas no Revit",dashLabel:"Gravação de tela: dashboard de controle da qualidade da modelagem em Power BI",dashH:"Painel de Qualidade da Modelagem",dashP:"Dashboard em Power BI que consolida a saúde dos modelos ativos: BIM Health Score, percentual de erros críticos, erros mais frequentes e quick wins de limpeza por modelo.",
+pfEyebrow:"Módulo 2 · Portfólio de Projetos",pfTitle:"Projetos de arquitetura, modelados e detalhados em BIM",
+pfSub:"Seis projetos, do conceito à documentação. Cada ficha reúne dados do projeto, nível de envolvimento e imagens.",
+more:"Veja mais",less:"Ver menos",all:"Todos",filters:["Arquitetônico","Compatibilização / MEP","Estrutural em BIM","As-Built / Scan-to-BIM"],img:"[Imagem do projeto]",
+inv:"Envolvimento",abEyebrow:"Autoridade profissional",abTitle:"Arquiteto & Desenvolvedor BIM",
+abP:"A ParARCHmetric Data é a consultoria de Diego Bonadiman, arquiteto e urbanista com mais de 8 anos de experiência em metodologia BIM, design computacional e análise de dados na construção civil. Une visão técnica de projeto com programação para transformar fluxos tradicionais em rotinas automatizadas e eficientes.",
+diffs:[{h:"Projeto e código",p:"Entendimento real das dores de projeto, com capacidade de programar a solução."},{h:"Padronização normativa",p:"Projetos e automações alinhados à ISO 19650, com elaboração de BEP."},{h:"Dados e inteligência",p:"Dashboards em Power BI integrados a bancos SQL para KPIs e métricas de projeto em tempo real."}],
+ctEyebrow:"Conversão",ctTitle:"Contato & solicitação de orçamento",
+c1h:"Para Empresas de AEC",c1p:"Precisa automatizar rotinas no seu escritório ou criar um plugin sob medida?",c1b:"Solicitar Automação BIM",subj1:"Solicitar Automação BIM",
+c2h:"Para Clientes de Projeto",c2p:"Procura desenvolvimento ou coordenação de projetos estruturados em BIM?",c2b:"Solicitar Proposta de Projeto",subj2:"Solicitar Proposta de Projeto",
+c3h:"Redes & Código",c3p:"Acesso ao repositório público de scripts e ao LinkedIn profissional."
+},
+en: {
+nav1:"BIM Solutions",nav2:"Portfolio",nav3:"About",nav4:"Contact",
+eyebrow:"BIM consultancy · Computational design · Data",
+h1:"Intelligent modeling, data-driven solutions",
+heroSub:"Automation in Revit, Dynamo and Python, Power BI dashboards and BIM coordination for architecture and engineering firms and contractors.",
+cta1:"Explore BIM solutions",cta2:"View Project Portfolio",cta3:"About ParARCHmetric Data",
+solEyebrow:"Module 1 · BIM & Dev Solutions",solTitle:"BIM Scripts & Automation",
+solSub:"Scripts, plugins and automations that streamline workflows in the Revit/Dynamo ecosystem, focused on productivity, ROI and standardization.",
+sol:[{h:"Productivity Scripts",p:"Automation of repetitive tasks: batch renaming, COBie parameter filling, automatic creation of sheets and views."},{h:"Model Validation (QA/QC)",p:"Custom tools for clash detection, BEP compliance checks and element auditing."},{h:"Generative & Parametric Design",p:"Dynamo/Grasshopper algorithms for facade optimization, parking layouts, solar studies and construction rationalization."}],
+impEyebrow:"Service · BIM Implementation",impTitle:"BIM implementation for architecture firms, project managers and contractors",
+impSub:"Maturity diagnostics, custom BEP and process standardization, with automation and team training, aligned with ISO 19650.",
+impAud:[{h:"Architecture firms",p:"BIM standards and operating procedures, libraries and templates, and automated routines to improve team interoperability and efficiency."},{h:"Project management firms",p:"Multidisciplinary coordination and clash detection, QA/QC audits and Power BI KPI dashboards to track project performance."},{h:"Contractors",p:"Models prepared for quantity take-off and fidelity between model and site, with data connected to control dashboards."}],
+impStepsTitle:"How it works",
+impSteps:[{h:"Diagnostics",p:"Assessment of BIM maturity and current workflows."},{h:"BEP and standards",p:"Development of the BEP and standard operating procedures."},{h:"Parametrization and automation",p:"Libraries, Dynamo and Python scripts, and QA/QC checks."},{h:"Training",p:"Team training to standardize and sustain the processes."}],
+impCta:"Request BIM implementation",
+featH:"Automatic Sheet & View Generator",featP:"Python script that reads the project's room list and automatically generates 3D views, enlarged plans and sheets set up with the standard title block.",
+featGain:"Time saved",featGainV:"30% less manual time",featAud:"Audience",featAudV:"BIM Managers & Modelers",
+demoLabel:"Screen recording: Dynamo script creating views and sheets in Revit",dashLabel:"Screen recording: Power BI modeling quality control dashboard",dashH:"Modeling Quality Dashboard",dashP:"Power BI dashboard that consolidates the health of active models: BIM Health Score, critical error percentage, most frequent errors and clean-up quick wins per model.",
+pfEyebrow:"Module 2 · Project Portfolio",pfTitle:"Architecture projects, modeled and detailed in BIM",
+pfSub:"Six projects, from concept to documentation. Each sheet gathers project data, level of involvement and images.",
+more:"See more",less:"See less",all:"All",filters:["Architectural","Coordination / MEP","Structural in BIM","As-Built / Scan-to-BIM"],img:"[Project image]",
+inv:"Involvement",abEyebrow:"Professional authority",abTitle:"Architect & BIM Developer",
+abP:"ParARCHmetric Data is the consultancy of Diego Bonadiman, an architect and urban planner with over 8 years of experience in BIM methodology, computational design and data analytics in construction. It combines technical design vision with programming to turn traditional workflows into automated, efficient routines.",
+diffs:[{h:"Design and code",p:"A real understanding of design pain points, with the ability to program the solution."},{h:"Standards-based",p:"Projects and automations aligned with ISO 19650, including BEP development."},{h:"Data and intelligence",p:"Power BI dashboards connected to SQL databases for KPIs and real-time project metrics."}],
+ctEyebrow:"Get in touch",ctTitle:"Contact & quote requests",
+c1h:"For AEC Firms",c1p:"Need to automate routines in your office or build a custom plugin?",c1b:"Request BIM Automation",subj1:"BIM Automation request",
+c2h:"For Project Clients",c2p:"Looking for development or coordination of BIM-structured projects?",c2b:"Request a Project Proposal",subj2:"Project proposal request",
+c3h:"Social & Code",c3p:"Access to the public script repository and the professional LinkedIn."
+}};
 
-<script src="js/data.js"></script>
-<script src="js/app.js"></script>
-</body>
-</html>
+const IMG = { sel1:'assets/img/projetos/sel1.jpg', sel2:'assets/img/projetos/sel2.jpg', sel3:'assets/img/projetos/sel3.jpg', sel4:'assets/img/projetos/sel4.jpg',
+esm1:'assets/img/projetos/esm1.jpg', esm2:'assets/img/projetos/esm2.jpg', esm3:'assets/img/projetos/esm3.jpg',
+arc1:'assets/img/projetos/arc1.jpg', arc2:'assets/img/projetos/arc2.jpg', arc3:'assets/img/projetos/arc3.jpg', arc4:'assets/img/projetos/arc4.jpg', arc5:'assets/img/projetos/arc5.jpg',
+gf1:'assets/img/projetos/gf1.jpg', aur1:'assets/img/projetos/aur1.jpg', aur2:'assets/img/projetos/aur2.jpg',
+bend1:'assets/img/projetos/bend1.jpg', bend2:'assets/img/projetos/bend2.jpg', bend3:'assets/img/projetos/bend3.jpg', mes1:'assets/img/projetos/mes1.jpg',
+mr1:'assets/img/projetos/mr1.jpg', mr2:'assets/img/projetos/mr2.jpg', mr3:'assets/img/projetos/mr3.jpg', mr4:'assets/img/projetos/mr4.jpg', mr5:'assets/img/projetos/mr5.jpg', mr6:'assets/img/projetos/mr6.jpg',
+mt1:'assets/img/projetos/mt1.jpg', mt2:'assets/img/projetos/mt2.jpg', mt3:'assets/img/projetos/mt3.jpg', mt4:'assets/img/projetos/mt4.jpg', mt5:'assets/img/projetos/mt5.jpg', mt6:'assets/img/projetos/mt6.jpg',
+arcp:'assets/img/projetos/arcp.jpg', gfs:'assets/img/projetos/gfs.jpg', gfl:'assets/img/projetos/gfl.jpg',
+eb:'assets/img/projetos/eb.jpg', ed:'assets/img/projetos/ed.jpg', ep1:'assets/img/projetos/ep1.jpg', ep2:'assets/img/projetos/ep2.jpg', ep3:'assets/img/projetos/ep3.jpg',
+esc:'assets/img/projetos/esc.jpg', arcd:'assets/img/projetos/arcd.jpg',
+epi:'assets/img/projetos/epi.jpg', edk:'assets/img/projetos/edk.jpg', ee:'assets/img/projetos/ee.jpg', eq:'assets/img/projetos/eq.jpg' };
+const SPEC = { pt:['Local','Ano','Duração','Software','Equipe','Status'], en:['Location','Year','Duration','Software','Team','Status'] };
+const INV = { pt:['Modelagem 3D / Render','Projeto','Detalhamento / Documentação','Coordenação técnica'], en:['3D modeling / Rendering','Design','Drafting / Documentation','Technical coordination'] };
+const ST = { done:{pt:'Concluído',en:'Finished'}, none:{pt:'Proposta',en:'Proposal'} };
+// fig: [img, cls, panel, cap pt, cap en]
+const PROJ = [
+{id:'esmeralda',no:'01',year:'2021',inv:[1,1,1,1],st:'done',loc:{pt:'Angra dos Reis, RJ, Brasil',en:'Angra dos Reis, RJ, Brazil'},dur:{pt:'2 anos',en:'2 years'},sw:'Revit · AutoCAD Architecture · SketchUp · V-Ray · Twinmotion',team:'Auri Engenharia',
+ type:{pt:'Residencial · Multifamiliar',en:'Residential · Multifamily'},name:'Esmeralda Beach Village',
+ desc:{pt:'Condomínio residencial de alto padrão de frente para o mar, em Angra dos Reis. Seis blocos, cada um com dois apartamentos e duas coberturas duplex, e áreas comuns com salão de festas, quadra poliesportiva, sauna, piscinas, deck e píer de atracação privativo, integradas por paisagismo. O modelo BIM foi usado para detecção de interferências.',en:'High-end oceanfront residential complex in Angra dos Reis. Six blocks, each with two standard apartments and two duplex penthouses, and communal areas with a ballroom, multi-sport court, sauna, pools, boardwalk deck and a private mooring pier, tied together by landscaping. The BIM model was used for clash detection.'},
+ descCls:'s8',hero:['esm1','s12','',{pt:'Render noturno',en:'Night rendering'}],
+ figs:[['esm2','s6','',{pt:'Foto da obra, exterior',en:'Exterior photo as built'}],['esm3','s6','pl',{pt:'Implantação',en:'Site plan'}],
+  ['eb','s4','pl',{pt:'Diagrama BIM',en:'BIM diagram'}],
+  ['ed','s8','pl',{pt:'Detalhe isométrico: placa cimentícia revestida em argamassa e pintura',en:'Isometric detail: cement board finished in mortar and paint'}],
+  ['esc','s12','pl',{pt:'Script Dynamo para remover view templates não utilizados e manter os arquivos mais leves durante a modelagem',en:'Dynamo scripting to remove unused view templates to keep the files cleaner and lighter during the modeling'}],
+  ['ep1','s6','pl',{pt:'Planta baixa: apartamento térreo',en:'Floor plan: ground-floor apartment'}],
+  ['ep2','s6','pl',{pt:'Planta baixa: apartamento duplex, 1º pavimento',en:'Floor plan: duplex apartment, first floor'}],
+  ['ep3','s6','pl',{pt:'Planta baixa: apartamento duplex, cobertura',en:'Floor plan: duplex apartment, penthouse level'}],
+  ['epi','s6','',{pt:'Obra executada: piscina da cobertura',en:'As built: penthouse pool'}],
+  ['edk','s6','',{pt:'Obra executada: deck e guarda-corpo de vidro na cobertura',en:'As built: rooftop deck and glass guardrail'}],
+  ['ee','s6','',{pt:'Obra executada: escada e sala com vista para o mar',en:'As built: staircase and living room with sea view'}],
+  ['eq','s12','',{pt:'Obra executada: quadra poliesportiva',en:'As built: multi-sport court'}]]},
+{id:'selita',no:'02',year:'2024',inv:[1,1,0,1],st:'none',loc:{pt:'Rio de Janeiro, Brasil',en:'Rio de Janeiro, Brazil'},dur:{pt:'3 meses',en:'3 months'},sw:'Revit · Dynamo · Twinmotion',team:'Igreja Universal do Reino de Deus',
+ type:{pt:'Uso misto',en:'Mixed use'},name:{pt:'Selita — Habitação e Escritórios',en:'Selita — Housing and Offices'},
+ desc:{pt:'Complexo de uso misto em terreno próximo à Catedral da Fé, com habitação e escritórios para as atividades da igreja. Conduzi a equipe de projeto até a solução apresentada a partir do conceito em Revit, criando famílias paramétricas de brises via script Dynamo e validando a documentação. Terreno: 2.817,05 m²; área construída total: 8.451,15 m².',en:'Mixed-use complex on a site near the Faith Cathedral, providing housing and office structure for church activities. Starting from the Revit concept, I led the design team to the presented solution, creating parametric sun-shading families via Dynamo scripting and validating the documentation. Site area: 2,817.05 sqm; total built area: 8,451.15 sqm.'},
+ descCls:'s8',hero:['sel1','s12','',{pt:'Render exterior',en:'Exterior rendering'}],
+ figs:[['sel2','s8','',{pt:'Render: quadra esportiva sobre a laje',en:'Rendering: sports court on the slab'}],['sel3','s4','pl',{pt:'Axonometria explodida',en:'Exploded axonometric view'}],['sel4','s12','pl',{pt:'Plantas e cortes do complexo',en:'Floor plans and sections of the complex'}]]},
+{id:'arcafe',no:'03',year:'2025',inv:[1,1,1,1],st:'done',loc:{pt:'Rio de Janeiro, Brasil',en:'Rio de Janeiro, Brazil'},dur:{pt:'6 meses',en:'6 months'},sw:'AutoCAD Architecture · SketchUp · Revit · V-Ray · Twinmotion',team:'Igreja Universal',
+ type:{pt:'Restaurante · Interiores',en:'Restaurant · Interiors'},name:'Arcafé',
+ desc:{pt:'Café dentro da maior igreja evangélica do Rio de Janeiro, um lugar de encontro e pausa entre os cultos. Defini os conceitos principais e desenvolvi os desenhos técnicos e detalhes em Revit junto à equipe de projeto, além de parte dos renders em V-Ray e Twinmotion.',en:'A café inside the largest evangelical church in Rio de Janeiro, a place to meet friends and pause between services. I defined the main concepts and developed the technical drawings and details in Revit alongside the design team, and produced some of the renderings in V-Ray and Twinmotion.'},
+ descCls:'s8',hero:['arc1','s12','',{pt:'Render da fachada',en:'Façade rendering'}],
+ figs:[['arc2','s8','',{pt:'Render interno',en:'Interior rendering'}],['arc3','s4','',{pt:'Foto da fachada',en:'Photo of the façade'}],['arcp','s6','pl',{pt:'Planta baixa',en:'Floor plan'}],['arc4','s6','',{pt:'Foto do balcão de pedidos',en:'Photo of the ordering counter'}],['arcd','s12','pl',{pt:'Script Dynamo: automação do layout das pranchas e do posicionamento do carimbo',en:'Dynamo script: automated sheet layout and title block placement'}]]},
+{id:'gf',no:'04',year:'2024',inv:[1,1,1,0],st:'done',loc:{pt:'Louisville, KY, EUA',en:'Louisville, KY, USA'},dur:{pt:'8 meses',en:'8 months'},sw:'Revit · Dynamo · Twinmotion',team:'Singular Construtech',
+ type:{pt:'Residencial · Casa de campo',en:'Residential · Country house'},name:'GF Farmstead',
+ desc:{pt:'Casa de campo em Louisville, Kentucky, para uma família nos fins de semana, com estratégias sustentáveis de projeto e construção para valorizar o terreno com impacto ambiental baixo a zero. Desenvolvi o conceito geral do programa e elaborei todos os desenhos técnicos e renders da proposta.',en:'A weekend country house in Louisville, Kentucky, for a family using sustainable design and building strategies to enhance the site with low to zero environmental impact. I developed the general concept of the program and drafted all the technical drawings and renderings for the proposal.'},
+ descCls:'s12',hero:['gf1','s8','',{pt:'Foto da fachada',en:'Façade photo'}],
+ figs:[['gfs','s8','pl',{pt:'Planta de situação',en:'Site plan'}],['gfl','s4','',{pt:'Fachada lateral',en:'Side façade'}]]},
+{id:'bend',no:'05',year:'2015',inv:[1,1,1,0],st:'none',loc:'Lexington, KY, USA',dur:{pt:'3 meses',en:'3 months'},sw:'Rhinoceros · Grasshopper · Photoshop · V-Ray',team:'Mike McKay',
+ type:{pt:'Pavilhão',en:'Pavilion'},name:'Bend Pavilion',
+ desc:{pt:'Partindo da geometria simples de um triângulo, o pavilhão aberto usa linhas limpas para definir o espaço: a forma triangular é guiada por um percurso dinâmico pela praça, fragmentada para ampliar as vistas e criar qualidades de luz variadas, e por fim dobrada para dentro, compondo um jogo de luz e sombra para usuários e observadores da paisagem urbana.',en:'Beginning with the simple geometry of a triangle, this open-air pavilion uses clean lines to define the space: the triangular form is guided along a dynamic path across the square, fragmented to enhance views and create varying qualities of light, and finally folded inward to display a play of light and shadow for users and observers of the urban landscape.'},
+ descCls:'s8',hero:['bend1','s12','',{pt:'Proposta na praça',en:'Proposal in the square'}],
+ figs:[['bend2','s12','pl',{pt:'Vistas do modelo',en:'Model views'}],['bend3','s12','pl',{pt:'Planta baixa, cortes A e B, sistema construtivo e vista explodida',en:'Floor plan, sections A and B, material system and exploded view'}]]},
+{id:'mesquita',no:'06',year:'2021',inv:null,st:'none',loc:{pt:'Mesquita, RJ, Brasil',en:'Mesquita, RJ, Brazil'},dur:'—',sw:'—',team:'—',
+ type:{pt:'Cultural · Urbanismo · Projeto de graduação',en:'Cultural · Urban design · Thesis project'},name:{pt:'Centro Cultural e Requalificação de Praças em Mesquita',en:'Cultural Center and Plaza Requalification in Mesquita'},
+ desc:{pt:'Projeto final de graduação, selecionado para exposição no Congresso Mundial de Arquitetos da UIA (2021). Propõe um centro cultural e a requalificação de praças em Mesquita.',en:'Final undergraduate thesis project, selected for exhibition at the UIA World Congress of Architects (2021). It proposes a cultural center and the requalification of plazas in Mesquita.'},
+ descCls:'s12',hero:['mes1','s12','',{pt:'Render',en:'Rendering'}],figs:[],
+ gals:[
+ {title:{pt:'Renders',en:'Renderings'},figs:[
+  ['mr1','s12','',{pt:'Render da praça: arquibancadas curvas e canteiros',en:'Plaza rendering: curved stepped seating and planters'}],
+  ['mr2','s6','',{pt:'Render interno: hall de entrada, livraria e escada helicoidal',en:'Interior rendering: entrance hall, bookshop and spiral staircase'}],
+  ['mr4','s6','',{pt:'Render interno: café com mezanino',en:'Interior rendering: café with mezzanine'}],
+  ['mr3','s6','',{pt:'Render da praça: pergolado e bancos em madeira',en:'Plaza rendering: timber pergola and benches'}],
+  ['mr5','s6','',{pt:'Render interno: mezanino expositivo e claraboia',en:'Interior rendering: exhibition mezzanine and skylight'}],
+  ['mr6','s12','',{pt:'Render do percurso e do paisagismo, com o centro cultural ao fundo',en:'Rendering of the path and landscaping, with the cultural center behind'}]]},
+ {title:{pt:'Desenhos técnicos e diagramas',en:'Technical drawings and diagrams'},figs:[
+  ['mt1','s6','pl',{pt:'Situação atual',en:'Existing situation'}],
+  ['mt2','s6','pl',{pt:'Diagramas urbanos: estratégias para a praça',en:'Urban diagrams: plaza strategies'}],
+  ['mt3','s12','pl',{pt:'Planta de paisagismo, implantação e corte da praça',en:'Landscape plan, site plan and plaza section'}],
+  ['mt4','s12','pl',{pt:'Diagramas conceituais do edifício',en:'Building concept diagrams'}],
+  ['mt5','s12','pl',{pt:'Plantas e axonométrica explodida do centro cultural',en:'Floor plans and exploded axonometric of the cultural center'}],
+  ['mt6','s12','pl',{pt:'Cortes e diagramas estrutural, de insolação e de ventilação',en:'Sections and structural, solar and ventilation diagrams'}]]}]}
+];
+function buildProjects(lang, open, T, toggle){
+ const pick = v => (v && typeof v === 'object') ? v[lang] : v;
+ return PROJ.map(p => {
+  const vals=[pick(p.loc),p.year,pick(p.dur),p.sw,p.team,p.st?ST[p.st][lang]:'—'];
+  const fig = f => ({src:IMG[f[0]],cls:f[1],pl:f[2],cap:f[3][lang]});
+  const isOpen=!!open[p.id];
+  return { open:isOpen, cardCls:isOpen?'is-open':'', heroCls:isOpen?'is-open':'is-closed', more:isOpen?T.less:T.more, less:T.less, arrow:isOpen?'↑':'→', toggle:(e)=>toggle(e,p.id), meta:[pick(p.loc),p.year].join(' · '),
+   id:p.id,no:p.no,year:p.year,type:pick(p.type),name:pick(p.name),desc:pick(p.desc),descCls:p.descCls,
+   hero:fig(p.hero), figs:p.figs.map(fig), gals:(p.gals||[]).map(g=>({title:g.title[lang],figs:g.figs.map(fig)})),
+   spec: p.inv ? SPEC[lang].map((k,i)=>({k,v:vals[i]})) : [0,1,5].map(i=>({k:SPEC[lang][i],v:vals[i]})),
+   hasInv: !!p.inv,
+   inv: p.inv ? INV[lang].map((label,i)=>({label,cls:p.inv[i]?'on':''})) : [] };
+ });
+}
+class Component extends DCLogic {
+constructor(props){ super(props); this.state = { lang: 'pt', open: {} }; }
+renderVals() {
+const lang = this.state.lang;
+const t = Object.assign({}, TXT[lang]);
+const mail = 'mailto:dxbarq@gmail.com?subject=';
+t.c1href = mail + encodeURIComponent(t.subj1);
+t.c2href = mail + encodeURIComponent(t.subj2);
+const on = 'min-width:52px;min-height:44px;border:0;cursor:pointer;font:600 14px Inter,sans-serif;background:#3d8fdc;color:#04101e';
+const off = 'min-width:52px;min-height:44px;border:0;cursor:pointer;font:600 14px Inter,sans-serif;background:transparent;color:#c3cddc';
+return {
+t, projects: buildProjects(lang, this.state.open, t, (e,id)=>{ if(e&&e.preventDefault)e.preventDefault(); const wasOpen=!!this.state.open[id]; this.setState({ open: Object.assign({}, this.state.open, {[id]: !wasOpen}) }); if(wasOpen) setTimeout(()=>{ const el=document.getElementById(id); if(el) el.scrollIntoView({block:'start'}); },50); }),
+stack: ['Autodesk Revit','Dynamo','Python','Grasshopper','Power BI','SQL','Archicad','Solibri','ISO 19650 / BEP'],
+isPt: lang === 'pt', isEn: lang === 'en',
+ptStyle: lang === 'pt' ? on : off, enStyle: lang === 'en' ? on : off,
+setPt: () => this.setState({ lang: 'pt' }),
+setEn: () => this.setState({ lang: 'en' })
+};
+}
+}
+</script>
+
+
+</body></html>
