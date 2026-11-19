@@ -22,7 +22,7 @@ demoLabel:"Gravação de tela: script Dynamo criando vistas e folhas no Revit",d
 pfEyebrow:"Módulo 2 · Portfólio de Projetos",pfTitle:"Projetos de arquitetura, modelados e detalhados em BIM",
 pfSub:"Seis projetos, do conceito à documentação. Cada ficha reúne dados do projeto, nível de envolvimento e imagens.",
 all:"Todos",filters:["Arquitetônico","Compatibilização / MEP","Estrutural em BIM","As-Built / Scan-to-BIM"],img:"[Imagem do projeto]",
-inv:"Envolvimento",abEyebrow:"Autoridade profissional",abTitle:"Arquiteto & Desenvolvedor BIM",
+inv:"Envolvimento",abEyebrow:"Arquitetura e Tecnologia",abTitle:"Arquiteto & Desenvolvedor BIM",
 abP:"A ParARCHmetric Data é a consultoria de Diego Bonadiman, arquiteto e urbanista com mais de 8 anos de experiência em metodologia BIM, design computacional e análise de dados na construção civil. Une visão técnica de projeto com programação para transformar fluxos tradicionais em rotinas automatizadas e eficientes.",
 diffs:[{h:"Projeto e código",p:"Entendimento real das dores de projeto, com capacidade de programar a solução."},{h:"Padronização normativa",p:"Projetos e automações alinhados à ISO 19650, com elaboração de BEP."},{h:"Dados e inteligência",p:"Dashboards em Power BI integrados a bancos SQL para KPIs e métricas de projeto em tempo real."}],
 ctEyebrow:"Conversão",ctTitle:"Contato & solicitação de orçamento",
