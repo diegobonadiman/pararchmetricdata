@@ -27,7 +27,7 @@ all:"Todos",filters:["Arquitetônico","Compatibilização / MEP","Estrutural em 
 inv:"Envolvimento",abEyebrow:"Arquitetura e tecnologia",abTitle:"Arquiteto & Desenvolvedor BIM",
 abP:"A ParARCHmetric Data é a consultoria de Diego Bonadiman, arquiteto e urbanista com mais de 8 anos de experiência em metodologia BIM, design computacional e análise de dados na construção civil. Une visão técnica de projeto com programação para transformar fluxos tradicionais em rotinas automatizadas e eficientes.",
 diffs:[{h:"Projeto e código",p:"Entendimento real das dores de projeto, com capacidade de programar a solução."},{h:"Padronização normativa",p:"Projetos e automações alinhados à ISO 19650, com elaboração de BEP."},{h:"Dados e inteligência",p:"Dashboards em Power BI integrados a bancos SQL para KPIs e métricas de projeto em tempo real."}],
-ctEyebrow:"Conversão",ctTitle:"Contato & solicitação de orçamento",
+ctEyebrow:"Contato",ctTitle:"Contato & solicitação de orçamento",
 c1h:"Para Empresas de AEC",c1p:"Precisa automatizar rotinas no seu escritório ou criar um plugin sob medida?",c1b:"Solicitar Automação BIM",subj1:"Solicitar Automação BIM",
 c2h:"Para Clientes de Projeto",c2p:"Procura desenvolvimento ou coordenação de projetos estruturados em BIM?",c2b:"Solicitar Proposta de Projeto",subj2:"Solicitar Proposta de Projeto",
 c3h:"Redes & Código",c3p:"Acesso ao repositório público de scripts e ao LinkedIn profissional."
