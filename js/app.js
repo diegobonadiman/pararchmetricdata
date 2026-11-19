@@ -5,7 +5,7 @@
   'use strict';
 
   var MAIL = 'mailto:dxbarq@gmail.com?subject=';
-  var STACK = ['Autodesk Revit', 'Dynamo', 'Python', 'Grasshopper', 'Power BI', 'SQL', 'Archicad', 'Solibri', 'ISO 19650 / BEP'];
+  var STACK = ['Autodesk Revit', 'Dynamo', 'Python', 'Grasshopper', 'Power BI', 'SQL', 'pyRevit', 'Solibri', 'BIMCollab', 'MCP Server', 'Autodesk Forma','ISO 19650 / BEP'];
   var BTN_ON = 'min-width:52px;min-height:44px;border:0;cursor:pointer;font:600 14px Inter,sans-serif;background:#3d8fdc;color:#04101e';
   var BTN_OFF = 'min-width:52px;min-height:44px;border:0;cursor:pointer;font:600 14px Inter,sans-serif;background:transparent;color:#c3cddc';
 
