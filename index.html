@@ -103,9 +103,20 @@
 <p style="margin:0 0 12px;font:600 13px Inter,sans-serif;letter-spacing:.14em;text-transform:uppercase;color:#0bb1ee">{{t.pfEyebrow}}</p>
 <h2 style="margin:0 0 16px;font:500 clamp(32px,4vw,48px)/1.1 'Hanken Grotesk',sans-serif;letter-spacing:-.01em">{{t.pfTitle}}</h2>
 <p style="margin:0 0 40px;max-width:680px;font:400 17px/1.6 Inter,sans-serif;color:#aab6c9">{{t.pfSub}}</p>
-<nav aria-label="Índice / Index" style="margin-bottom:56px;border-bottom:1px solid #1b2333">
-<sc-for list="{{projects}}" as="p" hint-placeholder-count="7">
-<a class="ix" href="#{{p.id}}"><span style="color:#0bb1ee;font-family:ui-monospace,Menlo,monospace">{{p.no}}</span><span>{{p.name}}</span><span style="color:#9aa7bb;font-size:14px">{{p.year}}</span></a>
+<nav aria-label="Projetos / Projects" class="pf-grid">
+<sc-for list="{{projects}}" as="p" hint-placeholder-count="6">
+<a class="pf-card" href="#{{p.id}}" aria-labelledby="pf-{{p.id}}">
+<div class="pf-img"><img src="{{p.hero.src}}" alt="" loading="lazy"></div>
+<div class="pf-body">
+<p class="pf-meta">{{p.cardMeta}}</p>
+<h3 class="pf-title" id="pf-{{p.id}}">{{p.name}}</h3>
+<p class="pf-desc">{{p.desc}}</p>
+<div class="pf-foot">
+<sc-if value="{{p.cardSw}}"><p class="pf-sw">{{p.cardSw}}</p></sc-if>
+<sc-if value="{{p.cardTeam}}"><p class="pf-team">{{p.cardTeam}}</p></sc-if>
+</div>
+</div>
+</a>
 </sc-for>
 </nav>
 <sc-for list="{{projects}}" as="p" hint-placeholder-count="7">

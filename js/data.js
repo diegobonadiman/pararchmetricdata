@@ -172,6 +172,9 @@ function buildProjects(lang){
   return { id:p.id,no:p.no,year:p.year,type:pick(p.type),name:pick(p.name),desc:pick(p.desc),descCls:p.descCls,
    hero:fig(p.hero), figs:p.figs.map(fig), gals:(p.gals||[]).map(g=>({title:g.title[lang],figs:g.figs.map(fig)})),
    spec: p.inv ? SPEC[lang].map((k,i)=>({k,v:vals[i]})) : [0,1,5].map(i=>({k:SPEC[lang][i],v:vals[i]})),
+   cardMeta:[pick(p.loc),p.year,pick(p.type)].filter(Boolean).join(' · '),
+   cardSw:(p.sw && p.sw!=='—') ? p.sw : '',
+   cardTeam:[(p.team && p.team!=='—') ? SPEC[lang][4]+': '+p.team : '', pick(p.dur)!=='—' ? pick(p.dur) : '', p.st==='done' ? ST.done[lang] : ''].filter(Boolean).join(' · '),
    hasInv: !!p.inv,
    inv: p.inv ? INV[lang].map((label,i)=>({label,cls:p.inv[i]?'on':''})) : [] };
  });
