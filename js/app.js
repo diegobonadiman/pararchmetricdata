@@ -5,11 +5,15 @@
   'use strict';
 
   var MAIL = 'mailto:dxbarq@gmail.com?subject=';
-  var STACK = ['Autodesk Revit', 'Dynamo', 'Python', 'Grasshopper', 'Power BI', 'SQL', 'pyRevit', 'MCP Server', 'Solibri', 'ISO 19650 / BEP'];
+  var STACK = ['Autodesk Revit', 'Dynamo', 'Python', 'Grasshopper', 'Power BI', 'SQL', 'Archicad', 'Solibri', 'ISO 19650 / BEP'];
   var BTN_ON = 'min-width:52px;min-height:44px;border:0;cursor:pointer;font:600 14px Inter,sans-serif;background:#3d8fdc;color:#04101e';
   var BTN_OFF = 'min-width:52px;min-height:44px;border:0;cursor:pointer;font:600 14px Inter,sans-serif;background:transparent;color:#c3cddc';
 
-  var state = { lang: 'pt' };
+  var PAGE = document.body.getAttribute('data-page') || 'home';   // 'home' ou 'portfolio'
+  var LANG_KEY = 'pam-lang';
+  function loadLang() { try { return localStorage.getItem(LANG_KEY) === 'en' ? 'en' : 'pt'; } catch (e) { return 'pt'; } }
+  function saveLang(l) { try { localStorage.setItem(LANG_KEY, l); } catch (e) {} }
+  var state = { lang: loadLang() };
   var app = document.getElementById('app');
   var tpl = document.getElementById('site-template');
   var reduceMotion = window.matchMedia && window.matchMedia('(prefers-reduced-motion: reduce)').matches;
@@ -19,9 +23,13 @@
     var t = Object.assign({}, TXT[lang]);
     t.c1href = MAIL + encodeURIComponent(t.subj1);
     t.c2href = MAIL + encodeURIComponent(t.subj2);
+    var projects = buildProjects(lang);
     return {
       t: t,
-      projects: buildProjects(lang),
+      h: PAGE === 'home' ? '' : 'index.html',          // prefixo dos links para âncoras da home
+      navPf: PAGE === 'portfolio' ? 'page' : 'false',
+      projects: projects,
+      teaser: TEASER.map(function (id) { return projects.filter(function (p) { return p.id === id; })[0]; }).filter(Boolean),
       stack: STACK,
       isPt: lang === 'pt',
       isEn: lang === 'en',
@@ -102,12 +110,14 @@
     renderChildren(tpl.content, context(), out);
     app.replaceChildren.apply(app, out);
     document.documentElement.lang = state.lang === 'pt' ? 'pt-BR' : 'en';
+    if (PAGE === 'portfolio') document.title = TXT[state.lang].pfDocTitle;
     prepareVideos();
   }
   function setLang(lang) {
     if (state.lang === lang) return;
     var y = window.scrollY;
     state.lang = lang;
+    saveLang(lang);
     draw();
     window.scrollTo(0, y);
     var pressed = app.querySelector('button[aria-pressed="true"]');

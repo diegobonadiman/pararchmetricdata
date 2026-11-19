@@ -21,8 +21,10 @@ featGain:"Ganho de tempo",featGainV:"30% menos tempo manual",featAud:"Público",
 demoLabel:"Gravação de tela: script Dynamo criando vistas e folhas no Revit",dashLabel:"Gravação de tela: dashboard de controle da qualidade da modelagem em Power BI",dashH:"Painel de Qualidade da Modelagem",dashP:"Dashboard em Power BI que consolida a saúde dos modelos ativos: BIM Health Score, percentual de erros críticos, erros mais frequentes e quick wins de limpeza por modelo.",
 pfEyebrow:"Módulo 2 · Portfólio de Projetos",pfTitle:"Projetos de arquitetura, modelados e detalhados em BIM",
 pfSub:"Seis projetos, do conceito à documentação. Cada ficha reúne dados do projeto, nível de envolvimento e imagens.",
+pfTeaser:"Uma seleção de projetos residenciais, comerciais e culturais, do conceito à documentação. Cada um abre a ficha completa, com imagens, desenhos técnicos e dados do projeto.",
+pfAll:"Ver portfólio completo",pfBack:"Todos os projetos",pfCtaTitle:"Quer conversar sobre um projeto?",pfCtaBtn:"Ir para contato",ctPf:"Ver portfólio de projetos",pfDocTitle:"Portfólio de Projetos · ParARCHmetric Data",
 all:"Todos",filters:["Arquitetônico","Compatibilização / MEP","Estrutural em BIM","As-Built / Scan-to-BIM"],img:"[Imagem do projeto]",
-inv:"Envolvimento",abEyebrow:"Arquitetura e Tecnologia",abTitle:"Arquiteto & Desenvolvedor BIM",
+inv:"Envolvimento",abEyebrow:"Autoridade profissional",abTitle:"Arquiteto & Desenvolvedor BIM",
 abP:"A ParARCHmetric Data é a consultoria de Diego Bonadiman, arquiteto e urbanista com mais de 8 anos de experiência em metodologia BIM, design computacional e análise de dados na construção civil. Une visão técnica de projeto com programação para transformar fluxos tradicionais em rotinas automatizadas e eficientes.",
 diffs:[{h:"Projeto e código",p:"Entendimento real das dores de projeto, com capacidade de programar a solução."},{h:"Padronização normativa",p:"Projetos e automações alinhados à ISO 19650, com elaboração de BEP."},{h:"Dados e inteligência",p:"Dashboards em Power BI integrados a bancos SQL para KPIs e métricas de projeto em tempo real."}],
 ctEyebrow:"Conversão",ctTitle:"Contato & solicitação de orçamento",
@@ -50,6 +52,8 @@ featGain:"Time saved",featGainV:"30% less manual time",featAud:"Audience",featAu
 demoLabel:"Screen recording: Dynamo script creating views and sheets in Revit",dashLabel:"Screen recording: Power BI modeling quality control dashboard",dashH:"Modeling Quality Dashboard",dashP:"Power BI dashboard that consolidates the health of active models: BIM Health Score, critical error percentage, most frequent errors and clean-up quick wins per model.",
 pfEyebrow:"Module 2 · Project Portfolio",pfTitle:"Architecture projects, modeled and detailed in BIM",
 pfSub:"Six projects, from concept to documentation. Each sheet gathers project data, level of involvement and images.",
+pfTeaser:"A selection of residential, commercial and cultural projects, from concept to documentation. Each one opens the full sheet, with images, technical drawings and project data.",
+pfAll:"View full portfolio",pfBack:"All projects",pfCtaTitle:"Want to talk about a project?",pfCtaBtn:"Go to contact",ctPf:"View project portfolio",pfDocTitle:"Project Portfolio · ParARCHmetric Data",
 all:"All",filters:["Architectural","Coordination / MEP","Structural in BIM","As-Built / Scan-to-BIM"],img:"[Project image]",
 inv:"Involvement",abEyebrow:"Professional authority",abTitle:"Architect & BIM Developer",
 abP:"ParARCHmetric Data is the consultancy of Diego Bonadiman, an architect and urban planner with over 8 years of experience in BIM methodology, computational design and data analytics in construction. It combines technical design vision with programming to turn traditional workflows into automated, efficient routines.",
@@ -59,6 +63,56 @@ c1h:"For AEC Firms",c1p:"Need to automate routines in your office or build a cus
 c2h:"For Project Clients",c2p:"Looking for development or coordination of BIM-structured projects?",c2b:"Request a Project Proposal",subj2:"Project proposal request",
 c3h:"Social & Code",c3p:"Access to the public script repository and the professional LinkedIn."
 }};
+
+// Dimensões (largura, altura) de cada imagem: o navegador reserva o espaço antes de carregar,
+// evitando que a página "pule" e mantendo corretos os links diretos para cada projeto.
+const DIM = {
+  sel1: [1920,1080],
+  sel2: [1920,1080],
+  sel3: [1412,2000],
+  sel4: [1867,762],
+  esm1: [2000,1125],
+  esm2: [1902,2000],
+  esm3: [905,1280],
+  arc1: [1920,1080],
+  arc2: [1920,1080],
+  arc3: [1200,1600],
+  arc4: [2350,1774],
+  gf1: [1920,1440],
+  bend1: [1920,1081],
+  bend2: [1920,407],
+  bend3: [1920,1052],
+  mes1: [1920,936],
+  mr1: [1280,667],
+  mr2: [1053,733],
+  mr3: [1280,667],
+  mr4: [1297,904],
+  mr5: [1214,664],
+  mr6: [1280,531],
+  mt1: [842,595],
+  mt2: [842,595],
+  mt3: [842,595],
+  mt4: [1920,1536],
+  mt5: [1920,1536],
+  mt6: [1920,1536],
+  arcp: [585,599],
+  gfs: [1920,1079],
+  gfl: [1920,2561],
+  eb: [1242,1266],
+  ed: [3000,1544],
+  ep1: [1715,1194],
+  ep2: [1718,1185],
+  ep3: [1715,1200],
+  esc: [1942,740],
+  arcd: [4096,1134],
+  epi: [1263,1011],
+  edk: [1284,1014],
+  ee: [1044,849],
+  eq: [1281,939]
+};
+
+// Projetos exibidos na faixa do portfólio na página inicial (ids, na ordem desejada).
+const TEASER = ['esmeralda','selita','mesquita'];
 
 const IMG = {
   sel1: 'assets/img/selita/01-selita.jpg',
@@ -168,7 +222,7 @@ function buildProjects(lang){
  const pick = v => (v && typeof v === 'object') ? v[lang] : v;
  return PROJ.map(p => {
   const vals=[pick(p.loc),p.year,pick(p.dur),p.sw,p.team,p.st?ST[p.st][lang]:'—'];
-  const fig = f => ({src:IMG[f[0]],cls:f[1],pl:f[2],cap:f[3][lang]});
+  const fig = f => { const dm = DIM[f[0]] || []; return {src:IMG[f[0]],w:dm[0],h:dm[1],cls:f[1],pl:f[2],cap:f[3][lang]}; };
   return { id:p.id,no:p.no,year:p.year,type:pick(p.type),name:pick(p.name),desc:pick(p.desc),descCls:p.descCls,
    hero:fig(p.hero), figs:p.figs.map(fig), gals:(p.gals||[]).map(g=>({title:g.title[lang],figs:g.figs.map(fig)})),
    spec: p.inv ? SPEC[lang].map((k,i)=>({k,v:vals[i]})) : [0,1,5].map(i=>({k:SPEC[lang][i],v:vals[i]})),

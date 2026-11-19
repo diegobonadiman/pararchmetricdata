@@ -1,0 +1,114 @@
+<!doctype html>
+<html lang="pt-BR">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Portfólio de Projetos · ParARCHmetric Data</title>
+<meta name="description" content="Portfólio de projetos de arquitetura modelados e detalhados em BIM: Esmeralda Beach Village, Selita, Arcafé, GF Farmstead, Bend Pavilion e Centro Cultural de Mesquita.">
+<meta name="theme-color" content="#05070d">
+<meta property="og:type" content="website">
+<meta property="og:title" content="Portfólio de Projetos · ParARCHmetric Data">
+<meta property="og:description" content="Portfólio de projetos de arquitetura modelados e detalhados em BIM: Esmeralda Beach Village, Selita, Arcafé, GF Farmstead, Bend Pavilion e Centro Cultural de Mesquita.">
+<link rel="icon" href="assets/img/logo/logo-pararchmetric.png">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Hanken+Grotesk:wght@400;500;600;700&amp;family=Inter:wght@400;500;600&amp;display=swap" rel="stylesheet">
+<link rel="stylesheet" href="css/style.css">
+</head>
+<body data-page="portfolio">
+<div id="app"></div>
+<noscript><p style="color:#e8edf5;font:400 16px Inter,sans-serif;padding:32px">Este site precisa de JavaScript. Contato: <a href="mailto:dxbarq@gmail.com" class="ulink">dxbarq@gmail.com</a></p></noscript>
+
+<!-- Modelo (template) da página: preenchido por js/app.js com os dados de js/data.js -->
+<template id="site-template">
+<div style="background:#05070d;color:#e8edf5;font-family:Inter,sans-serif;width:100%;overflow-x:hidden">
+
+<header class="hdr">
+<a href="{{h}}#inicio" class="hdr-logo" aria-label="ParARCHmetric Data"><img src="assets/img/logo/logo-pararchmetric.png" alt="ParARCHmetric Data"></a>
+<div class="hdr-right">
+<nav aria-label="Menu" class="hdr-nav">
+<a class="nav" href="{{h}}#solucoes">{{t.nav1}}</a>
+<a class="nav" href="portfolio.html" aria-current="{{navPf}}">{{t.nav2}}</a>
+<a class="nav" href="{{h}}#sobre">{{t.nav3}}</a>
+<a class="nav" href="{{h}}#contato">{{t.nav4}}</a>
+</nav>
+<div role="group" aria-label="Idioma / Language" class="lang">
+<button type="button" onClick="{{setPt}}" aria-pressed="{{isPt}}" style="{{ptStyle}}">PT</button>
+<button type="button" onClick="{{setEn}}" aria-pressed="{{isEn}}" style="{{enStyle}}">EN</button>
+</div>
+</div>
+</header>
+
+<section id="portfolio" style="max-width:1240px;margin:0 auto;padding:var(--sec-pt) var(--sec-px) 40px;box-sizing:border-box">
+<p style="margin:0 0 12px;font:600 13px Inter,sans-serif;letter-spacing:.14em;text-transform:uppercase;color:#0bb1ee">{{t.pfEyebrow}}</p>
+<h1 style="margin:0 0 16px;font:500 clamp(32px,4vw,48px)/1.1 'Hanken Grotesk',sans-serif;letter-spacing:-.01em">{{t.pfTitle}}</h1>
+<p style="margin:0 0 40px;max-width:680px;font:400 17px/1.6 Inter,sans-serif;color:#aab6c9">{{t.pfSub}}</p>
+<nav id="projetos" aria-label="Projetos / Projects" class="pf-grid">
+<sc-for list="{{projects}}" as="p" hint-placeholder-count="6">
+<a class="pf-card" href="#{{p.id}}" aria-labelledby="pf-{{p.id}}">
+<div class="pf-img"><img src="{{p.hero.src}}" alt="" loading="lazy"></div>
+<div class="pf-body">
+<p class="pf-meta">{{p.cardMeta}}</p>
+<h3 class="pf-title" id="pf-{{p.id}}">{{p.name}}</h3>
+<p class="pf-desc">{{p.desc}}</p>
+<div class="pf-foot">
+<sc-if value="{{p.cardSw}}"><p class="pf-sw">{{p.cardSw}}</p></sc-if>
+<sc-if value="{{p.cardTeam}}"><p class="pf-team">{{p.cardTeam}}</p></sc-if>
+</div>
+</div>
+</a>
+</sc-for>
+</nav>
+<sc-for list="{{projects}}" as="p" hint-placeholder-count="7">
+<article id="{{p.id}}" style="border-top:1px solid #33405a;padding:56px 0 72px;scroll-margin-top:16px">
+<a class="pf-back" href="#projetos"><span aria-hidden="true">←</span> {{t.pfBack}}</a>
+<div style="display:flex;align-items:flex-end;gap:24px;flex-wrap:wrap;margin-bottom:28px">
+<div class="num">{{p.no}}</div>
+<div><div style="font:500 13px ui-monospace,Menlo,monospace;letter-spacing:.08em;text-transform:uppercase;color:#0bb1ee;margin-bottom:8px">{{p.type}}</div>
+<h3 style="margin:0;font:500 clamp(28px,4vw,48px)/1.05 'Hanken Grotesk',sans-serif;letter-spacing:-.01em">{{p.name}}</h3></div>
+</div>
+<div class="pj-grid">
+<figure class="{{p.hero.cls}}" style="margin:0"><div class="{{p.hero.pl}}"><img src="{{p.hero.src}}" alt="{{p.hero.cap}}" width="{{p.hero.w}}" height="{{p.hero.h}}" loading="lazy"></div><figcaption class="cap">{{p.hero.cap}}</figcaption></figure>
+<div class="s4">
+<sc-for list="{{p.spec}}" as="r" hint-placeholder-count="5"><div class="row"><b>{{r.k}}</b><span>{{r.v}}</span></div></sc-for>
+<sc-if value="{{p.hasInv}}" hint-placeholder-val="{{true}}">
+<div class="row" style="display:block"><b>{{t.inv}}</b><div style="display:flex;flex-wrap:wrap;gap:8px;margin-top:10px">
+<sc-for list="{{p.inv}}" as="i" hint-placeholder-count="4"><span class="chip {{i.cls}}">{{i.label}}</span></sc-for>
+</div></div>
+</sc-if>
+</div>
+<div class="{{p.descCls}}"><p style="margin:8px 0 8px;font:400 17px/1.7 Inter,sans-serif;color:#c3cddc;max-width:760px">{{p.desc}}</p></div>
+<sc-for list="{{p.figs}}" as="f" hint-placeholder-count="3">
+<figure class="{{f.cls}}" style="margin:0"><div class="{{f.pl}}"><a href="{{f.src}}" target="_blank" rel="noopener" style="display:block;cursor:zoom-in"><img src="{{f.src}}" alt="{{f.cap}}" width="{{f.w}}" height="{{f.h}}" loading="lazy"></a></div><figcaption class="cap">{{f.cap}}</figcaption></figure>
+</sc-for>
+<sc-for list="{{p.gals}}" as="g" hint-placeholder-count="2">
+<div class="s12" style="margin-top:48px">
+<h4 style="margin:0 0 20px;padding-top:20px;border-top:1px solid #1b2333;font:600 22px 'Hanken Grotesk',sans-serif">{{g.title}}</h4>
+<div class="pj-grid">
+<sc-for list="{{g.figs}}" as="h" hint-placeholder-count="6">
+<figure class="{{h.cls}}" style="margin:0"><div class="{{h.pl}}"><a href="{{h.src}}" target="_blank" rel="noopener" style="display:block;cursor:zoom-in"><img src="{{h.src}}" alt="{{h.cap}}" width="{{h.w}}" height="{{h.h}}" loading="lazy"></a></div><figcaption class="cap">{{h.cap}}</figcaption></figure>
+</sc-for>
+</div>
+</div>
+</sc-for>
+</div>
+</article>
+</sc-for>
+</section>
+
+<section style="max-width:1240px;margin:0 auto;padding:0 var(--sec-px) var(--sec-pb);box-sizing:border-box">
+<div class="pf-cta">
+<h2 style="margin:0;font:500 clamp(24px,3vw,32px)/1.2 'Hanken Grotesk',sans-serif">{{t.pfCtaTitle}}</h2>
+<a class="btn" href="{{h}}#contato" style="min-width:min(100%,260px)"><span>{{t.pfCtaBtn}}</span><span aria-hidden="true">→</span></a>
+</div>
+</section>
+
+<footer style="border-top:1px solid #151b28;padding:32px;text-align:center;font:400 14px Inter,sans-serif;color:#9aa7bb">© 2026 ParARCHmetric Data · Diego Bonadiman · <a href="mailto:dxbarq@gmail.com" class="ulink">dxbarq@gmail.com</a></footer>
+
+</div>
+</template>
+
+<script src="js/data.js"></script>
+<script src="js/app.js"></script>
+</body>
+</html>
